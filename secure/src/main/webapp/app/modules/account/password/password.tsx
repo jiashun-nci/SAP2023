@@ -36,18 +36,21 @@ export const PasswordPage = () => {
     } else if (errorMessage) {
       toast.error(errorMessage);
     }
+    dispatch(reset());
   }, [successMessage, errorMessage]);
 
   return (
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="password-title">Password for {account.login}</h2>
+          <h2 id="password-title">
+            Password for [<strong>{account.login}</strong>]
+          </h2>
           <ValidatedForm id="password-form" onSubmit={handleValidSubmit}>
             <ValidatedField
               name="currentPassword"
               label="Current password"
-              placeholder={'Current password'}
+              placeholder="Current password"
               type="password"
               validate={{
                 required: { value: true, message: 'Your password is required.' },
@@ -57,7 +60,7 @@ export const PasswordPage = () => {
             <ValidatedField
               name="newPassword"
               label="New password"
-              placeholder={'New password'}
+              placeholder="New password"
               type="password"
               validate={{
                 required: { value: true, message: 'Your password is required.' },

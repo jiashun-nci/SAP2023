@@ -28,7 +28,7 @@ export const LogsPage = () => {
       <h2 id="logs-page-heading" data-cy="logsPageHeading">
         Logs
       </h2>
-      <p>There are {loggers.length.toString()} loggers.</p>
+      <p>There are {loggers.length} loggers.</p>
 
       <span>Filter</span>
       <input type="text" value={filter} onChange={changeFilter} className="form-control" disabled={isFetching} />

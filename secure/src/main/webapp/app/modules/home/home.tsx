@@ -20,7 +20,7 @@ export const Home = () => {
         <p className="lead">This is your homepage</p>
         {account?.login ? (
           <div>
-            <Alert color="success">You are logged in as user {account.login}.</Alert>
+            <Alert color="success">You are logged in as user &quot;{account.login}&quot;.</Alert>
           </div>
         ) : (
           <div>
@@ -28,16 +28,15 @@ export const Home = () => {
               If you want to
               <span>&nbsp;</span>
               <Link to="/login" className="alert-link">
-                {' '}
                 sign in
               </Link>
               , you can try the default accounts:
-              <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-              <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
+              <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;) <br />- User (login=&quot;user&quot; and
+              password=&quot;user&quot;).
             </Alert>
 
             <Alert color="warning">
-              You do not have an account yet?&nbsp;
+              You don&apos;t have an account yet?&nbsp;
               <Link to="/account/register" className="alert-link">
                 Register a new account
               </Link>
@@ -75,7 +74,7 @@ export const Home = () => {
         </ul>
 
         <p>
-          If you like JHipster, do not forget to give us a star on{' '}
+          If you like JHipster, don&apos;t forget to give us a star on{' '}
           <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>

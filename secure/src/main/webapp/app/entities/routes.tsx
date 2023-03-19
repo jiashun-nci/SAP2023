@@ -1,16 +1,17 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
-import ErrorBoundaryRoute from 'app/shared/error/error-boundary-route';
+import { Route } from 'react-router-dom';
+
+import ErrorBoundaryRoutes from 'app/shared/error/error-boundary-routes';
 
 /* jhipster-needle-add-route-import - JHipster will add routes here */
 
-export default ({ match }) => {
+export default () => {
   return (
     <div>
-      <Switch>
+      <ErrorBoundaryRoutes>
         {/* prettier-ignore */}
         {/* jhipster-needle-add-route-path - JHipster will add routes here */}
-      </Switch>
+      </ErrorBoundaryRoutes>
     </div>
   );
 };

@@ -54,7 +54,7 @@ export const HealthPage = () => {
           <Table bordered aria-describedby="health-page-heading">
             <thead>
               <tr>
-                <th>Service Name</th>
+                <th>Service name</th>
                 <th>Status</th>
                 <th>Details</th>
               </tr>

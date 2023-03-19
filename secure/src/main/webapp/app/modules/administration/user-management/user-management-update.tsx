@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Button, Row, Col, FormText } from 'reactstrap';
 import { ValidatedField, ValidatedForm, isEmail } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,24 +7,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { getUser, getRoles, updateUser, createUser, reset } from './user-management.reducer';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
-export const UserManagementUpdate = (props: RouteComponentProps<{ login: string }>) => {
-  const [isNew] = useState(!props.match.params || !props.match.params.login);
+export const UserManagementUpdate = () => {
   const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
+
+  const { login } = useParams<'login'>();
+  const isNew = login === undefined;
 
   useEffect(() => {
     if (isNew) {
       dispatch(reset());
     } else {
-      dispatch(getUser(props.match.params.login));
+      dispatch(getUser(login));
     }
     dispatch(getRoles());
     return () => {
       dispatch(reset());
     };
-  }, [props.match.params.login]);
+  }, [login]);
 
   const handleClose = () => {
-    props.history.push('/admin/user-management');
+    navigate('/admin/user-management');
   };
 
   const saveUser = values => {
@@ -46,7 +50,7 @@ export const UserManagementUpdate = (props: RouteComponentProps<{ login: string 
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h1>Create or edit a User</h1>
+          <h1>Create or edit a user</h1>
         </Col>
       </Row>
       <Row className="justify-content-center">
@@ -105,7 +109,7 @@ export const UserManagementUpdate = (props: RouteComponentProps<{ login: string 
               <ValidatedField
                 name="email"
                 label="Email"
-                placeholder={'Your email'}
+                placeholder="Your email"
                 type="email"
                 validate={{
                   required: {

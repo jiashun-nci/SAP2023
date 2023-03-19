@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Col, Row, Button } from 'reactstrap';
-import { getUrlParameter, ValidatedField, ValidatedForm } from 'react-jhipster';
-import { RouteComponentProps } from 'react-router-dom';
+import { ValidatedField, ValidatedForm } from 'react-jhipster';
+import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import { handlePasswordResetFinish, reset } from '../password-reset.reducer';
 import PasswordStrengthBar from 'app/shared/layout/password/password-strength-bar';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
-export const PasswordResetFinishPage = (props: RouteComponentProps<{ key: string }>) => {
-  const [password, setPassword] = useState('');
-  const [key] = useState(getUrlParameter('key', props.location.search));
+export const PasswordResetFinishPage = () => {
   const dispatch = useAppDispatch();
+
+  const [searchParams] = useSearchParams();
+  const key = searchParams.get('key');
+
+  const [password, setPassword] = useState('');
 
   useEffect(
     () => () => {
@@ -30,7 +33,7 @@ export const PasswordResetFinishPage = (props: RouteComponentProps<{ key: string
         <ValidatedField
           name="newPassword"
           label="New password"
-          placeholder={'New password'}
+          placeholder="New password"
           type="password"
           validate={{
             required: { value: true, message: 'Your password is required.' },

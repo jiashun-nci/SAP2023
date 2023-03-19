@@ -47,7 +47,7 @@ export const RegisterPage = () => {
             <ValidatedField
               name="username"
               label="Username"
-              placeholder={'Your username'}
+              placeholder="Your username"
               validate={{
                 required: { value: true, message: 'Your username is required.' },
                 pattern: {
@@ -62,7 +62,7 @@ export const RegisterPage = () => {
             <ValidatedField
               name="email"
               label="Email"
-              placeholder={'Your email'}
+              placeholder="Your email"
               type="email"
               validate={{
                 required: { value: true, message: 'Your email is required.' },
@@ -75,7 +75,7 @@ export const RegisterPage = () => {
             <ValidatedField
               name="firstPassword"
               label="New password"
-              placeholder={'New password'}
+              placeholder="New password"
               type="password"
               onChange={updatePassword}
               validate={{
@@ -106,11 +106,11 @@ export const RegisterPage = () => {
           <p>&nbsp;</p>
           <Alert color="warning">
             <span>If you want to</span>
-            <a className="alert-link"> sign in</a>
+            <a className="alert-link">sign in</a>
             <span>
               , you can try the default accounts:
-              <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-              <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
+              <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;) <br />- User (login=&quot;user&quot; and
+              password=&quot;user&quot;).
             </span>
           </Alert>
         </Col>

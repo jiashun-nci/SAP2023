@@ -41,7 +41,7 @@ export const ConfigurationPage = () => {
       <h2 id="configuration-page-heading" data-cy="configurationPageHeading">
         Configuration
       </h2>
-      <span>Filter</span> <Input type="search" value={filter} onChange={changeFilter} name="search" id="search" />
+      <span>Filter (by prefix)</span> <Input type="search" value={filter} onChange={changeFilter} name="search" id="search" />
       <label>Spring configuration</label>
       <Table className="table table-striped table-bordered table-responsive d-table">
         <thead>

@@ -166,7 +166,7 @@ describe('Authentication reducer tests', () => {
         },
       ];
       await store.dispatch(getSession());
-      expect(store.getActions()[0]).toMatchObject(expectedActions[0]);
+      expect(store.getActions()).toMatchObject(expectedActions);
     });
 
     it('dispatches LOGOUT actions', async () => {

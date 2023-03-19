@@ -38,7 +38,9 @@ export const SettingsPage = () => {
     <div>
       <Row className="justify-content-center">
         <Col md="8">
-          <h2 id="settings-title">User settings for {account.login}</h2>
+          <h2 id="settings-title">
+            User settings for [<strong>{account.login}</strong>]
+          </h2>
           <ValidatedForm id="settings-form" onSubmit={handleValidSubmit} defaultValues={account}>
             <ValidatedField
               name="firstName"
@@ -67,7 +69,7 @@ export const SettingsPage = () => {
             <ValidatedField
               name="email"
               label="Email"
-              placeholder={'Your email'}
+              placeholder="Your email"
               type="email"
               validate={{
                 required: { value: true, message: 'Your email is required.' },

@@ -40,7 +40,7 @@ export const PasswordResetInit = () => {
             <ValidatedField
               name="email"
               label="Email"
-              placeholder={'Your email'}
+              placeholder="Your email"
               type="email"
               validate={{
                 required: { value: true, message: 'Your email is required.' },

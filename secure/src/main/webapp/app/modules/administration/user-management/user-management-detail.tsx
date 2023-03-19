@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, RouteComponentProps } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Button, Row, Badge } from 'reactstrap';
 import { TextFormat } from 'react-jhipster';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,11 +9,13 @@ import { APP_DATE_FORMAT } from 'app/config/constants';
 import { getUser } from './user-management.reducer';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
-export const UserManagementDetail = (props: RouteComponentProps<{ login: string }>) => {
+export const UserManagementDetail = () => {
   const dispatch = useAppDispatch();
 
+  const { login } = useParams<'login'>();
+
   useEffect(() => {
-    dispatch(getUser(props.match.params.login));
+    dispatch(getUser(login));
   }, []);
 
   const user = useAppSelector(state => state.userManagement.user);
@@ -30,19 +32,19 @@ export const UserManagementDetail = (props: RouteComponentProps<{ login: string 
             <span>{user.login}</span>&nbsp;
             {user.activated ? <Badge color="success">Activated</Badge> : <Badge color="danger">Deactivated</Badge>}
           </dd>
-          <dt>First Name</dt>
+          <dt>First name</dt>
           <dd>{user.firstName}</dd>
-          <dt>Last Name</dt>
+          <dt>Last name</dt>
           <dd>{user.lastName}</dd>
           <dt>Email</dt>
           <dd>{user.email}</dd>
-          <dt>Created By</dt>
+          <dt>Created by</dt>
           <dd>{user.createdBy}</dd>
-          <dt>Created Date</dt>
+          <dt>Created date</dt>
           <dd>{user.createdDate ? <TextFormat value={user.createdDate} type="date" format={APP_DATE_FORMAT} blankOnInvalid /> : null}</dd>
-          <dt>Last Modified By</dt>
+          <dt>Modified by</dt>
           <dd>{user.lastModifiedBy}</dd>
-          <dt>Last Modified Date</dt>
+          <dt>Modified date</dt>
           <dd>
             {user.lastModifiedDate ? (
               <TextFormat value={user.lastModifiedDate} type="date" format={APP_DATE_FORMAT} blankOnInvalid />
