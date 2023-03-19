@@ -1,0 +1,20 @@
+entity Author {
+  firstName String required maxlength(50)
+  lastName String required maxlength(50)
+}
+
+entity Book{
+  isbn String required unique minlength(5) maxlength(13)
+  name String required maxlength(100)
+  publishYear String minlength(4) maxlength(50)
+  cover ImageBlob
+}
+
+relationship ManyToMany {
+  Book{author(firstName)} to Author{book}
+}
+
+filter Book, Author
+paginate Book, Author with pagination
+
+service all with serviceImpl

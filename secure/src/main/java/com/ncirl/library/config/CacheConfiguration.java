@@ -48,6 +48,10 @@ public class CacheConfiguration {
             createCache(cm, com.ncirl.library.domain.User.class.getName());
             createCache(cm, com.ncirl.library.domain.Authority.class.getName());
             createCache(cm, com.ncirl.library.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.ncirl.library.domain.Author.class.getName());
+            createCache(cm, com.ncirl.library.domain.Author.class.getName() + ".books");
+            createCache(cm, com.ncirl.library.domain.Book.class.getName());
+            createCache(cm, com.ncirl.library.domain.Book.class.getName() + ".authors");
             // jhipster-needle-ehcache-add-entry
         };
     }
