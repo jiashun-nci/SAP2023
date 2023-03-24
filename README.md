@@ -24,7 +24,7 @@ auto-refreshes when files change on your hard drive.
 cd secure
 ./mvnw
 ```
-test
+Open web broswer
 ```
 http://localhost:8080
 ```
