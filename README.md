@@ -34,3 +34,9 @@ mvn spring-boot:run
 ```
 http://localhost:8000
 ```
+
+### Open postman to do CRUD operations
+```
+http://localhost:8000/book/ 
+http://localhost:8000/book/{id}
+```
