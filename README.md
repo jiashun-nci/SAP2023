@@ -4,7 +4,10 @@
 ```
 cd insecure
 ```
-
+### open H2 database
+```
+http://localhost:8000/h2-console/
+```
 ###Insert data by these sql query
 ```
 DROP TABLE IF EXISTS BOOK;
