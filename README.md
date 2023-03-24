@@ -8,6 +8,8 @@ cd insecure
 ```
 http://localhost:8000/h2-console/
 ```
+![image](https://user-images.githubusercontent.com/73401615/227599859-c9ff1f64-3cc9-45ed-86af-e6a4a8b42493.png)
+
 ### Insert data by these sql query
 ```
 DROP TABLE IF EXISTS BOOK;
