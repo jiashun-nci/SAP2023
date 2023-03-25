@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.ncirl.insecure.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 import com.ncirl.insecure.service.BookService;
 
@@ -42,5 +44,12 @@ public class BookController {
         return "Welcomer to Library!";
     }
 
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
+    @GetMapping("/books")
+    public List<Book> getBooks(@RequestParam("title") String title) {
+        String sql = "SELECT * FROM books WHERE title = '" + title + "'";
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Book.class));
+    }
 }
