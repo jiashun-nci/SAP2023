@@ -42,5 +42,5 @@ Open web broswer
 http://localhost:8080
 ```
 
-visit http://loclahost:8080
+visit http://localhost:8080
 
