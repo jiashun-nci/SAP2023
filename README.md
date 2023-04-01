@@ -4,6 +4,15 @@
 ```
 cd insecure
 ```
+### start the insecure application
+```
+mvn spring-boot:run
+```
+
+### visit this web link
+```
+http://localhost:8000
+```
 ### open H2 database
 ```
 http://localhost:8000/h2-console/
@@ -27,15 +36,7 @@ INSERT INTO book (isbn, name) VALUES ('123458888', 'Matthew');
 INSERT INTO book (isbn, name) VALUES ('123454444', 'John');
 ```
 
-### start the insecure application
-```
-mvn spring-boot:run
-```
 
-### visit this web link
-```
-http://localhost:8000
-```
 
 ### Open postman to do CRUD operations
 ```
