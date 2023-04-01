@@ -1,12 +1,16 @@
-## insecure branch
+## insecure branch (Requires Java 11 )
 
 ### Go to insecure folder for more details.
 ```
 cd insecure
 ```
-### start the insecure application
+### start the insecure application if in Windows system
 ```
-mvn spring-boot:run
+mvn spring-boot:run   
+```
+### start the insecure application if in Linux system
+```
+./mvnw spring-boot:run   
 ```
 
 ### visit this web link
